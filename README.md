@@ -1,2 +1,2 @@
-ckammerl.github.io
+CKAMMERL.github.io
 ==================
