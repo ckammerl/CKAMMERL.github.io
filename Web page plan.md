@@ -17,30 +17,30 @@ Structure:
 
 
 Header elements and structure:
-h1 About Munich
-centered
+- h1 About Munich
+- centered
 
 
 Container elements and structure:
-	Div main (w 60%)
-Div content (centered)
-			Section (centered)
-h2 
-img (place in Munich)
-p, a (about place)
+- Div main (w 60%)
+- Div content (centered)
+- Section (centered)
+- h2 
+- img (place in Munich)
+- p, a (about place)
 
 
-			Section (centered)
-h2 
-img (place in Munich)
-p, a (about place)
+- Section (centered)
+-h2 
+-img (place in Munich)
+-p, a (about place)
 
 
 Sidebar elements and structure:
-aside
-ul h3
-li, a (Munich city information pages)
+-aside
+-ul
+-li, a (Munich city information pages)
 
 
-Footer elements and structure
-a, new window (email contact)
+Footer elements and structure:
+-a, new window (email contact)
