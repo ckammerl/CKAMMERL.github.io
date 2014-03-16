@@ -1,0 +1,15 @@
+.nav {
+	width: 100%;
+	background-color: cadetblue;
+}
+
+.nav-button {
+	width: 30%;
+	font-weight: bolder;
+	display: inline;
+	padding: 10px;
+}
+
+.nav-button a:hover {
+	color: #ffffff;
+}

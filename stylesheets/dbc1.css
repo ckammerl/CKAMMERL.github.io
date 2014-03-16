@@ -1,0 +1,30 @@
+body {
+	color: black;
+	font-size: 12px;
+	font-family: "Verdana", sans-serif;
+}
+
+.heading {
+	color: blue;
+	font-family: "Arial", sans-serif;
+}
+
+div li img {
+	display: block;
+	border: 1px dashed;
+}
+
+div a img {
+	display: block;
+	border: 1px dashed;
+}
+.warning {
+	color: darkred;
+	font-weight: bold;
+}
+
+.positive {
+	color: black;
+}
+
+

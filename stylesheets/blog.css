@@ -1,0 +1,66 @@
+body {
+	font: 12px black "Verdana" sans-serif;
+	margin: 2px;
+	min-width: 960px;
+	width: 100%;
+}
+
+
+#page_title {
+	color: cadetblue;
+	background-color: black;
+	border: solid black;
+	font-size: xx-large;
+	font-weight: bolder;
+	text-align: center;
+	padding: 10px;
+	
+}
+
+
+#main {
+	float: left;
+	width: 100%;
+}
+
+
+#content {
+	padding: 0;
+	margin: auto;
+	width: 40%;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	padding: 20px;
+}
+
+#content h1 {
+	font-size: 13px;
+	font-weight:  bolder;
+	color: cadetblue;
+}
+
+#content a {
+	font-weight: bolder;
+}
+
+#content a:hover {
+	text-decoration: none;
+}
+
+
+footer {
+	float: left;
+	color: cadetblue;
+	background-color: black;
+	border: solid black;
+	font-size: smaller;
+	text-align: left;
+	padding: 10px;
+	width: 100%;
+}
+
+
+footer a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}

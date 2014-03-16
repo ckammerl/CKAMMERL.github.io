@@ -1,0 +1,109 @@
+body {
+	color: black;
+	font-size: 12px;
+	font-family: "Verdana", sans-serif;
+	
+}
+
+#content {
+	margin: auto;
+	padding: 10px;
+	width: 1460px;
+}
+#left {
+	width: 1000px;
+	float: left;
+}
+
+#right {
+	width: 400px;
+	float:right;
+	border: 1px dashed black;
+	padding: 10px;
+}
+
+header h1 {
+	color: blue;
+	font-weight: bold;
+	font-family: "Arial", sans-serif;
+	text-align: center;
+	width: 1460px;
+}
+
+.heading {
+	color: blue;
+	font-family: "Arial", sans-serif;
+}
+
+ol li img {
+	display: block;
+	border: 1px dashed;
+	padding: 10px;
+	margin: 0px;
+	width: 350px;
+}
+
+
+}
+
+ol a:hover {
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+
+.warning {
+	color: darkred;
+	font-weight: bold;
+}
+
+.positive {
+	color: black;
+}
+
+.footer {
+	color: blue;
+	font-size: 11px;
+	float:left;
+	width: 1460px;
+}
+
+/*hover must come after :link and :visited in order to be effective*/
+
+footer a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+#sidebar {
+	font-weight: bold;
+	color: #0000FF;
+	height: 100px;
+	padding: 5px 3px 5px 3px;
+	border: 1px solid black;
+	float: left;
+}
+
+
+#footer{
+	font-size: 10px;
+}
+
+
+#footer:link {
+	font-weight: bold;
+}
+
+#footer:visited {
+	color: #00FF00;
+}
+
+#footer:hover {
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+ #footer:active {
+ 	color:#0000FF;
+ } 
