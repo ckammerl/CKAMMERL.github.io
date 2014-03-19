@@ -24,28 +24,34 @@ body {
 }
 
 
-#content {
+.content {
 	padding: 0;
 	margin: auto;
-	width: 40%;
+	width: 50%;
 	border-left: 1px solid;
 	border-right: 1px solid;
 	padding: 20px;
 }
 
-#content h1 {
+.content h1 {
 	font-size: 13px;
 	font-weight:  bolder;
 	color: cadetblue;
 }
 
-#content a {
+
+.content img {
+	display: block;
+}
+
+.content a {
 	font-weight: bolder;
 }
 
-#content a:hover {
+.content a:hover {
 	text-decoration: none;
 }
+
 
 
 footer {
