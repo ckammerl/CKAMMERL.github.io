@@ -91,9 +91,9 @@ body {
 
 /* footer */
 
-#footer {
+footer {
 	float: left;
-	color: mediumseagreen;
+	color: cadetblue;
 	background-color: black;
 	border: solid black;
 	font-size: smaller;
@@ -102,8 +102,8 @@ body {
 	width: 100%;
 }
 
-#footer_a:hover {
-	text-decoration: none;
-	font-weight: bolder;
-}
 
+footer a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
