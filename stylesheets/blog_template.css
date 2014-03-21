@@ -7,7 +7,7 @@ body {
 
 
 #page_title {
-	color: cadetblue;
+	color: gainsboro;
 	background-color: black;
 	border: solid black;
 	font-size: xx-large;
@@ -21,10 +21,12 @@ body {
 #main {
 	float: left;
 	width: 100%;
+
 }
 
 
 .content {
+	background-color: gainsboro;
 	padding: 0;
 	margin: auto;
 	width: 50%;
@@ -34,11 +36,21 @@ body {
 }
 
 .content h1 {
-	font-size: 13px;
+	font-size: 16px;
 	font-weight:  bolder;
-	color: cadetblue;
+	color: darkgoldenrod;
 }
 
+.content h2 {
+	font-size:12px;
+	font-weight: bolder;
+	color: black;
+}
+
+.highlight {
+	color: darkgoldenrod;
+	font-weight: bolder;
+}
 
 .content img {
 	display: block;
@@ -50,13 +62,14 @@ body {
 
 .content a:hover {
 	text-decoration: none;
+	color: gainsboro;
 }
 
 
 
 footer {
 	float: left;
-	color: cadetblue;
+	color: gainsboro;
 	background-color: black;
 	border: solid black;
 	font-size: smaller;
@@ -68,5 +81,5 @@ footer {
 
 footer a:hover {
 	text-decoration: none;
-	font-weight: bold;
+	color: #ffffff;
 }

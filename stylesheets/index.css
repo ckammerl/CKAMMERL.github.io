@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "MyOpenModerna";
+    src: url(MgOpenModernaRegular.ttf);
+}
+
+
 body {
 	font: 12px black "Verdana" sans-serif;
 	margin: 2px;
@@ -7,7 +13,7 @@ body {
 
 
 #page_title {
-	color: cadetblue;
+	color: gainsboro;
 	background-color: black;
 	border: solid black;
 	font-size: xx-large;
@@ -27,6 +33,7 @@ body {
 	width: 65%;
 	float: left;
 	border-right: 1px solid black;
+	background-color: gainsboro;
 }
 
 #right {
@@ -43,7 +50,7 @@ body {
 }
 
 .content_p {
-	font-family: "MyOpenModerna", sans-serif;
+	font: 13px "MyOpenModerna", sans-serif;
 }
 
 .content_p a:hover {
@@ -54,12 +61,14 @@ body {
 .content_img {
 	display: block;
 	width: 95.7446808511%;
+	border: 1px solid black;
 }
 
+
 .header_img {
-	font-size: 13px;
+	font-size: 16px;
 	font-weight:  bolder;
-	color: cadetblue;
+	color: darkgoldenrod;
 }
 
 /* main right */
@@ -78,10 +87,17 @@ body {
 	font-style: italic;
 }
 
+.aside_a:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+/* footer */
+
 
 footer {
 	float: left;
-	color: cadetblue;
+	color: gainsboro;
 	background-color: black;
 	border: solid black;
 	font-size: smaller;
@@ -93,5 +109,5 @@ footer {
 
 footer a:hover {
 	text-decoration: none;
-	font-weight: bold;
+	color: #ffffff;
 }
