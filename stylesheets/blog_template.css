@@ -53,6 +53,10 @@ body {
 	font-weight: bolder;
 }
 
+.highlight:hover {
+	color: black;
+}
+
 .content img {
 	display: block;
 }
@@ -63,7 +67,7 @@ body {
 
 .content a:hover {
 	text-decoration: none;
-	color: gainsboro;
+	color: #ffffff;
 }
 
 
