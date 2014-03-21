@@ -33,6 +33,7 @@ body {
 	border-left: 1px solid;
 	border-right: 1px solid;
 	padding: 20px;
+	letter-spacing: 0.3px;
 }
 
 .content h1 {
