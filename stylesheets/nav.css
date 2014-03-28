@@ -5,6 +5,7 @@
 	border: 1px solid black;
 }
 
+
 .nav-button {
 	width: 30%;
 	font-weight: bolder;
@@ -15,3 +16,5 @@
 .nav-button a:hover {
 	color: #ffffff;
 }
+
+

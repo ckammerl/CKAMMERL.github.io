@@ -33,6 +33,7 @@ body {
 	border-left: 1px solid;
 	border-right: 1px solid;
 	padding: 20px;
+	padding-right: 45px;
 	letter-spacing: 0.3px;
 }
 
@@ -43,10 +44,17 @@ body {
 }
 
 .content h2 {
+	font-size:13px;
+	font-weight: bolder;
+	color: black;
+}
+
+.content h3 {
 	font-size:12px;
 	font-weight: bolder;
 	color: black;
 }
+
 
 .highlight {
 	color: darkgoldenrod;
@@ -70,7 +78,11 @@ body {
 	color: #ffffff;
 }
 
-
+.code {
+	width: 90%;
+	padding: 10px;
+	background-color: whitesmoke;
+}
 
 footer {
 	float: left;
