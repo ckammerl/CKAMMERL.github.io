@@ -15,6 +15,7 @@
 		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
 		<div class="nav-button"><a href="03_21_14.html">Values Blog</a></div>
 		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week3_cultural_blog.html">Pairing Blog</a></div>
 	</div>
 
 	<header id="page_title">*** Technical Blog ***</header>
@@ -36,20 +37,23 @@
 				<a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html">the Enumerable mixin.</a> Well, that's a good start, but what are the differences of Arrays and Hashes that make you decide which one will solve a task more efficiently? Lets look briefly at each of them separatly.</p>
 
 	
-			<p><strong>Arrays</strong></p>
+			<h2><strong>Arrays</strong></h2>
 			<ul>
 				<li>Arrays are used to <span class="highlight">store a collection of data</span>, this can be strings ('hello'), numbers (4 or 4.3 or -1), symbols (:name) or a mix of all three. You can <strong>access each element</strong> in your array with a unique <strong>key</strong>. This key is the <strong>index</strong> number, i.e. an integer starting with index '0' at the first postion.<br><br>Going through your array, the index numbers are assigned in ascending order. You can locate the last element in your array by using the index 'n-1' while 'n' stands for the array's length.<br><br>
 					<span class="highlight">Example</span>:<br><br>
+					<div class="code">
 					<code>
 					arr = ["hello", 4, :name]<br>
 					arr[0] = "hello" #=> <em>the element at index '0'</em><br>
 					arr[2] = :name #=> <em>the element at index '2'</em><br><br>
 					n = arr.length #=> <em>3</em><br>
 					arr[n-1] = :name
-					</code><br>
+					</code>
+					</div>
 				</li><br>
 				<li>You can also <strong>store key-value pairs</strong> in a nested array. Let's say we want to store the object "Sebastian" with the assigned value "35" and the object "Anton" with the assigned value "1" in an array called 'person':
 					<br><br>
+					<div class="code">
 					<code>
 					person = [["Sebastian", 35], ["Anton", 1]]<br>
 					#=><em>nested arrays where ["Sebastian", 35] has index 0 and ["Anton", 1] has index '1'</em><br><br>
@@ -58,9 +62,11 @@
 					person[1][0] = "Anton"<br>
 					#=><em>element at index '0' within array at index '1' is a string</em>
 					</code>
+					</div>
 					</li><br>
 				<li>However <strong>searching a specific element</strong> in your array <strong>without knowing its index number</strong>, means that you have to look at each of the array's elements, i.e. itereate through your list until you find it. Depending on the length of your array, running the code and getting the result may take some time (due to the memory that has to be used).<br><br>
 					<span class="highlight">Example</span>:<br><br>
+					<div class="code">
 					<code>
 					person = [["Sebastian", 35], ["Anton", 1]]<br>
 					nephew = "Anton"<br><br>
@@ -81,24 +87,30 @@
 							end<br>
 						}<br>
 						#=> <em>look at index 1 in each nested array and return message if element equal to the value of age</em><br>
-						#=> <em>"Anton is 1 year(s) old."</em><br><br>
+						#=> <em>"Anton is 1 year(s) old."</em>
 					</code>
+					</div>
 				</li>
 			</ul>
 
+			<br>
 
-			<p><strong>Hashes</strong></p>
+
+			<h2><strong>Hashes</strong></h2>
 			<ul>
 				<li>Hashes are used to <span class="highlight">store a collection of data</span> but the hash objects are not integer indexed. A hash consists of a collection of unique key-value pairs and you can <strong>access each object</strong> with a unique <strong>key</strong>, which is can be a string ('hello'), a number (4 or 4.3 or -1) or a symbol (:name). The key is however not the index number (<-> array) but the key <strong>of unique a key-value pair</strong>.<br><br>
 					<span class="highlight">Example</span>:<br><br>
+					<div class="code">
 					<code>
 					person = {"Sebastian" => 35, "Anton" => 1}<br> #=> <em> key is the string "Sebastian" as well as "Anton" and the corresponding values are the integer 35 and 1 resp.</em>
 					</code>
+					</div>
 				</li><br>
 
 				<li>The <strong>search</strong> of a specific element in a hash is very easy and fast - especially compared to searching an element in an array of which you don't know the index number!<br><br> 
 				<span class="highlight">Example</span>:<br><br>
 				Looking at the hash 'person', if we want to look up the value of the object "Anton" we can easily do it like this:<br><br>
+					<div class="code">
 					<code>
 					person = {"Sebastian" => 35, "Anton" => 1}<br>
 					puts person["Anton"]<br>
@@ -106,14 +118,19 @@
 					
 					Alternative solution:<br><br>
 					puts person.values_at("Anton")<br>
-					#=> <em>access the hash with key ("Anton") and return the corresponding value (1)</em><br><br>
+					#=> <em>access the hash with key ("Anton") and return the corresponding value (1)</em>
 					</code>
+					</div>
+
+					<br>
 
 				If we want to find the object with the assigned value of 1, we can easily do it like this:<br><br>
+					<div class="code">
 					<code>
 					puts person.key(1) 
 					#=> <em>access the hash with value (1) and return the corresponding key ("Anton")</em>
 					</code>
+					</div>
 				 </li>
 				 <br><br>
 
