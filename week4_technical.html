@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ruby Enumerable#map</title>
+<link type="text/css" href="stylesheets/blog_template.css" rel="stylesheet"/>
+<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">Home</a></div>
+		<div class="nav-button"><a href="munich.html">Munich</a></div>
+		<div class="nav-button"><a href="03_15_14.html">Website Blog</a></div>
+		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
+		<div class="nav-button"><a href="03_21_14.html">Values Blog</a></div>
+		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week3_cultural_blog.html">Pairing Blog</a></div>
+		<div class="nav-button"><a href="week4_technical_blog.html">Ruby Enumerable#map</a></div>
+	</div>
+
+	<header id="page_title">*** Technical Blog ***</header>
+	
+	<div id="main">
+		<div class="content">
+			<h1>04/04/14 - Ruby Enumerable#map</h1>
+			<p>First, a short definition of <span class="highlight">Ruby Enumerable#map</span> according to <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html#method-i-map">ruby-doc.org</a>:</p>
+			<ul>
+				<li><strong>Enumerable#map returns a new array</strong> with the results of running block once for every element in enum. If no block is given, an enumerator is returned instead.</li><br>
+			<span class="highlight">Example</span>:<br><br>
+				<div class="code">
+					<code>
+					map { |obj| block }<br>
+					(1..4).map { |i| i*i }      		#=> [1, 4, 9, 16]<br><br>
+					map and collect are interchangeable<br>
+					(1..4).collect { "cat"  }   		#=> ["cat", "cat", "cat", "cat"]<br><br>
+
+					map => an_enumerator<br>
+					{name: "Sebastian", age: 4}.map     #=> Enumerator<br>
+					(1..4).map     						#=> Enumerator<br>
+					["adam","eve","snake"].map			#=> Enumerator<br>
+					</code>
+				</div>
+				<br>
+
+				<li>You can also use the method's destructive version <strong>map!</strong> which <strong>changes the original collection</strong>. It modifies the original collection by running the block for each of its elements. It returns not a copy but the modified original source.</li>
+			</ul><br>
+
+	
+			<h2><strong>Module Enumerable</strong></h2>
+
+			<p>Lets look at the the module <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html">Enumerable</a> and the method 
+				<a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html#method-i-map">.map</a> a little bit closer.</p>
+			<p>In addition to classes, Ruby has modules which are containers for methods and constants. If you want to write code once and share it between different unrelated classes, you can put it in modules to be mixed in with your classes. In order for a class to use <a href="http://www.ruby-doc.org/core-2.1.1/Enumerable.html">Enumerable</a>, it must define an .each method, like the classes 
+			<a href="http://www.ruby-doc.org/core-2.1.1/Array.html">Array</a> or <a href="http://www.ruby-doc.org/core-2.1.1/Hash.html">Hash</a>.</p>
+			<ul>
+				<li>In general, we can say that Enumerable provides several functions for filtering your collections.</li><br>
+				<span class="highlight">Example</span>:<br><br>
+				<div class="code">
+					<code>
+					(1..4).map { |i| i*i }      	#=> [1, 4, 9, 16]<br>
+					[1,2,3,4].select {|i| i < 3 }	#=> [1, 2]<br>
+					%w{apple pear fig}.sort_by { |word| word.length}   #=> ["fig", "pear", "apple"]
+					</code>
+				</div>
+			</ul><br>
+
+			<h2><strong>Enumerable#map</strong></h2>
+			<p>The method .map takes an enumerable object and a block, and runs the block for each element, outputting each returned value from the block in a new array. Being a part of the Enumerable module, you can use the method .map on various classes.</p>
+					<ul>
+						<li>When <span class="highlight">mapping a hash</span> with or without a block, the method <strong>returns an instance of Enumerator</strong>. As mentioned above, this is also true when you call the method .map without a block.
+						<a href="http://www.ruby-doc.org/core-2.1.1/Enumerator.html">Enumerator</a> is a class which allows both internal and external iteration. You can find more information at <a href="http://www.ruby-doc.org/core-2.1.1/Enumerator.html">ruby-doc.org</a>.<br><br>
+						<span class="highlight">Example</span>:<br><br>
+						<div class="code">
+							<code>
+							#using "strings" as keys and integer as values<br>
+							{"Sebastian" => 35, "Milo" => 4, "Anton" => 1}.map      #=> Enumerator<br><br>
+							#using a symbol as key instead of a "string" to omit the "hash rocket", i.e. => within the hash<br>
+							{name: "Sebastian", age: 4}.map      #=> Enumerator<br><br>
+							#calling .map on a range			 #=> Enumerator<br>
+							(2..4).map
+							</code>
+						</div>
+						</li><br>
+
+						<li>When <span class="highlight">mapping an array</span>, you apply a function to each of the array's elements, and <strong>return</strong> a new array with the results. The new array is a <strong>copy of the original array whose elements are modified</strong> according to the function defined in the code block.<br><br>
+						<span class="highlight">Example</span>:<br><br>
+						<div class="code">
+							<code>
+							[5,6,4].map { |i| i + 1 }      	#=> [6, 7, 5]<br>
+							</code>
+						</div>
+						</li><br>
+					</ul>
+	
+
+			<p><strong>Conclusion</strong></p>
+			<p>Use Enumerable#map when you're working with <strong>instances of the class Array</strong>. You can also convert an instance of Hash into an nested array of [key, value] arrays.</p>
+			<p>In order to iterate through your collection, you can either call the method <em>.each</em> or the method <em>.map</em>. How do you know which one to use when?<p>
+					<ul>
+						<li><strong>Use the method .each if</strong> you don't want a return value from the operations</li><br>
+						<li><strong>Use the method .map if</strong> you're looking for a return value and you want the return value to be a transformed version of each element<br><br>
+						<span class="highlight">Example</span>:<br><br>
+						<div class="code">
+							<code>
+							persons = ["adam","eve","snake"]<br>
+							x = persons.each do |name|<br>  	
+  								name + "!"<br>
+							end<br> 
+							#=> no return value for x<br><br>
+
+							persons = ["adam","eve","snake"]<br>
+							x = persons.map do |name|<br>
+  								name + "!"<br>		
+  							end<br>	
+  							#=> return value for x = ["adam!""eve!","snake!"]<br><br>			
+							</code>
+						</div>
+						</li><br>
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+	</div>
+</body>
+</html>
