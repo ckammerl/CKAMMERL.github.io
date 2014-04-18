@@ -1,0 +1,25 @@
+/* footer */
+
+
+footer {
+	float: left;
+	color: #ffffff;
+	background-color: black;
+	border: solid black;
+	font-size: smaller;
+	text-align: left;
+	padding: 2.5px;
+	width: 100%;
+}
+
+
+footer a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: darkgoldenrod;
+}
+
