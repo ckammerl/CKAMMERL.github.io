@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FP vs. OOP</title>
+<link type="text/css" href="stylesheets/blog_template.css" rel="stylesheet"/>
+<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">/Home</a></div>
+		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
+		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week4_technical_blog.html">Ruby Enumerable#map Blog</a></div>
+		<div class="nav-button"><a href="week5_technical_blog.html">Ruby class Blog</a></div>
+		<div class="nav-button"><a href="week6_technical_blog.html">OOP vs. FP Blog</a></div>
+		
+	</div>
+
+	<header id="page_title">TECHNICAL BLOG</header>
+	
+	<div id="main">
+		<div class="content">
+			<h1>04/18/14 - Object-Oriented Programming vs. Functional Programming</h1>
+			<h2><strong>Object-Oriented Programming (OOP)</strong></h2>
+			<p>Ruby is an example of an OO language. In OOP, also called imperative programming, we rely on classes which consist mainly of a collection of method definitions. The purpose of a class is to create new objects which are called instances of a class. The instances of a class have their individual state and behaviour. OOP mimics the real world in which the objects' state can be modified by different behaviour. Lets say the state of an instance of a class Person is as follows:</p>
+			<span class="highlight">Example</span>:<br><br>
+				<div class="code">
+					<code>
+					@mood = 'good'<br>
+					@weight = weight<br>
+
+					</code>
+				</div>
+				<br>
+
+				<p>An instance has its possible behaviours defined in the instance methods of its class, in our case class Person.</p>
+				<span class="highlight">Example</span>:<br><br>
+				<div class="code">
+					<code>
+					#instance method<br>
+					def eat<br>
+					  @weight + 5<br>
+					  unless @weight > 60  # kg<br>
+					  @mood<br>
+					  end<br>
+					  @mood = "bad"<br>
+					  end<br>
+					</code>
+				</div>
+				<br>
+
+				<p>As we see, depending on the instance's behaviour (#eat), it can change its state: mood and weight.</p><br> 
+
+			<h2><strong>Functional programming (FP)</strong></h2>
+			<p>In contrast to OOP, FP relies on functions rather than objects and their state. FP emphasises mathematical functions that produce results that depend only on their inputs. i.e. we can say: In FP, same input means always same output.</p>
+			<p>FP is implemented in languages like Haskell but also the good old in Excel is based on it. FP uses expressions, i.e. something that has a value. This can be an integer (4), a string ('hello') or a boolean (true). An expression is not stored in a variable like in OOP, but given to a function directly. In FP, a function (f) now works with these expressions (x) that are explicitly given to it but:</p>
+			<p><em>In FP, the function (f) does something with the input (x), and that is exactly what we define in the function (f), but the state of the input (x) will never be changed while the function is been executed.</em></p>
+			<p>In other words: the state of the expression x in f(x) will never change as expressions are not mutable in FP.</p>
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+	</div>
+</body>
+</html>
