@@ -1,25 +1,25 @@
-@font-face {
+/*@font-face {
     font-family: "MyOpenModerna";
     src: url(MgOpenModernaRegular.ttf);
 }
-
+*/
 
 body {
 	font: 12px black "Verdana" sans-serif;
 	margin: 2px;
 	min-width: 960px;
 	width: 100%;
+	letter-spacing: 0.3px;
 }
 
 
 #page_title {
-	color: gainsboro;
+	color: #ffffff;
 	background-color: black;
 	border: solid black;
-	font-size: xx-large;
-	font-weight: bolder;
+	font-size: x-large;
 	text-align: center;
-	padding: 10px;
+	padding: 5px;
 	
 }
 
@@ -33,8 +33,9 @@ body {
 	width: 65%;
 	float: left;
 	border-right: 1px solid black;
-	background-color: gainsboro;
+	background-color: #ffffff;
 }
+
 
 #right {
 	width: 30%;
@@ -44,14 +45,17 @@ body {
 /*main left */
 
 .content {
-	padding: 0;
+	padding: 10;
 	margin: auto;
 	width: 40%;
+	border: solid black 1px;
+	background-color: gainsboro;
 }
 
-.content_p {
+/*.content_p {
 	font: 13px "MyOpenModerna", sans-serif;
 }
+*/
 
 .content_p a:hover {
 	text-decoration: none;
@@ -62,29 +66,45 @@ body {
 	display: block;
 	width: 95.7446808511%;
 	border: 1px solid black;
+	margin: 0px 10px 0px 10px;
 }
 
+.highlight {
+	color: darkgoldenrod;
+	font-weight: bolder;
+}
 
 .header_img {
-	font-size: 16px;
+	font-size: 13px;
 	font-weight:  bolder;
+	margin: 20px 10px 10px 10px;
+}
+
+.content h2 a {
+	text-decoration: none;
 	color: darkgoldenrod;
+}
+
+.content h2 a:hover {
+	text-decoration: underline;
 }
 
 /* main right */
 
 #side {
 	border: dashed black 1px;
-	margin: auto;
-	margin-top: 20px;
-	padding: 10px;
+	margin: 60px;
+	padding: 60px;
 	width: 45%;
+}
+
+#side ul {
+	list-style: none;
 }
 
 #side h1 {
 	font-size: 13px;
 	font-weight: bolder;
-	font-style: italic;
 }
 
 .aside_a:hover {
@@ -92,22 +112,3 @@ body {
 	color: #ffffff;
 }
 
-/* footer */
-
-
-footer {
-	float: left;
-	color: gainsboro;
-	background-color: black;
-	border: solid black;
-	font-size: smaller;
-	text-align: left;
-	padding: 10px;
-	width: 100%;
-}
-
-
-footer a:hover {
-	text-decoration: none;
-	color: #ffffff;
-}

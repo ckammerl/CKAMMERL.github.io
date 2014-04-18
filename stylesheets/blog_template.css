@@ -7,13 +7,12 @@ body {
 
 
 #page_title {
-	color: gainsboro;
+	color: #ffffff;
 	background-color: black;
 	border: solid black;
-	font-size: xx-large;
-	font-weight: bolder;
+	font-size: x-large;
 	text-align: center;
-	padding: 10px;
+	padding: 5px;
 	
 }
 
@@ -71,11 +70,13 @@ body {
 
 .content a {
 	font-weight: bolder;
+	text-decoration: none;
+	color: black;
 }
 
 .content a:hover {
-	text-decoration: none;
-	color: #ffffff;
+	text-decoration: underline;
+	color: darkgoldenrod;
 }
 
 .code {
@@ -84,19 +85,4 @@ body {
 	background-color: whitesmoke;
 }
 
-footer {
-	float: left;
-	color: gainsboro;
-	background-color: black;
-	border: solid black;
-	font-size: smaller;
-	text-align: left;
-	padding: 10px;
-	width: 100%;
-}
 
-
-footer a:hover {
-	text-decoration: none;
-	color: #ffffff;
-}

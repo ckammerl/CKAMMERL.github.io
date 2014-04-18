@@ -1,20 +1,27 @@
 .nav {
 	width: 100%;
-	background-color: darkgoldenrod;
+	background-color: #ffffff;
 	padding: 10px;
 	border: 1px solid black;
 }
 
 
 .nav-button {
-	width: 30%;
+	width: 40%;
+	letter-spacing: 1.5px;
 	font-weight: bolder;
 	display: inline;
-	padding: 15px;
+	padding: 16px;
+}
+
+.nav-button a {
+	text-decoration: none;
+	color: black;
 }
 
 .nav-button a:hover {
-	color: #ffffff;
+	color: darkgoldenrod;
+	text-decoration: none;
 }
 
 
