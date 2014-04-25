@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SQL Injection</title>
+<link type="text/css" href="stylesheets/blog_template.css" rel="stylesheet"/>
+<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">/Home</a></div>
+		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
+		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week4_technical_blog.html">Ruby Enumerable#map Blog</a></div>
+		<div class="nav-button"><a href="week5_technical_blog.html">Ruby class Blog</a></div>
+		<div class="nav-button"><a href="week6_technical_blog.html">OOP vs. FP Blog</a></div>
+		<div class="nav-button"><a href="week7_technical_blog.html">SQL Injection BLOG</a></div>
+		
+	</div>
+
+	<header id="page_title">TECHNICAL BLOG</header>
+	
+	<div id="main">
+		<div class="content">
+			<h1>04/24/14 - SQL Injection</h1>
+			<p><strong>SQL injection</strong> according to <a href="http://www.w3schools.com/sql/sql_injection.asp>w3schools">w3schools</a> is a technique where malicious users can inject SQL commands into an SQL statement, via web page input.</p>
+
+
+			<p>Any application that accepts user input and stores user data in a back-end database is a <strong>possible target for SQL injection</strong>. As an example, a login page or a shopping cart are <strong>web apps that allow</strong> (rely on) <strong>communication with a user/ customer</strong>.</p> 
+
+			<p>In a SQL injection attack, a hacker may try to bypass a login form used to validate a user before granting him access. The attacker can enter a 'smart' SQL statement as input which he knows the database will always validate to 'true'. </p>
+			<span class="highlight">Example</span>:<br><br>
+				<div class="code">
+					<code>
+					#Ruby on Rails<br>
+					User.first("login = '#{params[:name]}' AND password = '#{params[:password]}'")
+					</code>
+				</div>
+
+			<p>If an attacker enters ' OR '1'='1 as the name, and ' OR '2'>'1 as the password, the resulting SQL query will be:</p>
+
+				<div class="code">
+					<code>
+					SELECT * FROM users WHERE login = '' OR '1'='1' AND password = '' OR '2'>'1' LIMIT 1
+					</code>
+				</div>
+		
+			<p>This will find the first record in the database, and grants access to this user. (source:<a href="http://guides.rubyonrails.org/security.html#injection">RailsGuides</a>)</p>
+
+			<p>The <strong>validation</strong> happens after the user entered his input. The web application that controls the login page contacts the database (sends a SQL statement) to verify user name and password. If the SQL statement is sent directly to the database, i.e. without any checks of the statement itself, the door is wide open for an attack.</p>
+			<p>A hacker could modify his entries at the login page in a way that allows him to get much more control over the database than the web application is giving to a 'regular' validated user.</p>
+
+			<div class="code">
+				<p>Here some <span class="highlight">examples</span> of what a SQL injection attack can do:</p>
+				<ul>
+					<li>GET the whole data set stored in a database</li>
+					<li>ALTER data stored in a database, i.e. modify, delete etc.</li>
+					<li>DESTROY the data base of an entire site</li>
+				</ul>
+			</div>
+
+			<h2>How can you prevent SQL injection?</h2>
+			<p>You should build apps in a way that prevents attacks from the beginning. You can make sure that 'wrong' input is recognized as not being valid and as a result, that a modified SQL statment is not executed.</p>
+			<p>I believe validating the statement given by the user by <strong>checking</strong> its <strong>length and data type</strong> is an important first step.</p>
+
+			<p>Accrding to <a href="http://guides.rubyonrails.org/security.html#injection">RailsGuides</a>, SQL injection is hardly a problem in most Rails applications thanks to clever methods. However, there are also some <span class="highlight">good practices</span> in <span class="highlight">Ruby on Rails</span>: You should pass an <span class="highlight">array</span> or a <span class="highlight">hash</span> to the condition option instead of a string.</p>
+
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+	</div>
+</body>
+</html>
