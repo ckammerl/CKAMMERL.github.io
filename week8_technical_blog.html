@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ruby on Rails</title>
+	<link type="text/css" href="stylesheets/blog_template.css" rel="stylesheet"/>
+	<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">/Home</a></div>
+		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
+		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week4_technical_blog.html">Ruby Enumerable#map Blog</a></div>
+		<div class="nav-button"><a href="week5_technical_blog.html">Ruby class Blog</a></div>
+		<div class="nav-button"><a href="week6_technical_blog.html">OOP vs. FP Blog</a></div>
+		<div class="nav-button"><a href="week7_technical_blog.html">SQL Injection BLOG</a></div>
+		<div class="nav-button"><a href="week8_technical_blog.html">Rails BLOG</a></div>
+	</div>
+
+	<header id="page_title">TECHNICAL BLOG</header>
+	
+	<div id="main">
+		<div class="content">
+			<h1>05/02/14 - Ruby on Rails</h1>
+			<p><a href="http://en.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a> or just <strong>Rails</strong> is an open source web application framework which runs via the Ruby programming language.<p>
+			<p>In other words, Rails is a <span class="highlight">software library</span>, a package library which is known as <a href="https://rubygems.org/">RubyGem</a> that has the necessary files and info for being installed on the system. Being a framework, Rails combines Ruby, HTML, CSS and JavaScript to create web applications on a web server. Because it runs on a web server, Rails is also called a 'back-end' app development platform.</p><br>
+
+			<h2>Rails <strong>'Model-View-Controller'</strong> pattern or <strong>MVC</strong></h2>
+			<p>What does it mean and how does it work?</p>
+
+			<img src="images/Rails_MVC_overview.jpg"/>
+
+			<p>As the name says, MVC consists of three components which we use to structure web applications. Let's look what each component does, after a web browser sent a request:</p>
+			<div class="code">
+			  <ul>
+				<li>The web server receives the request and finds out which controller to use.</li><br>
+				<li><strong>Controller</strong> are a Ruby classes with several methods used to handle requests. Controllers are therefore in charge of what <span class="highlight">to do</span> after the web server receives a request from the browser. Controller interact with View and Model.</li><br>
+				<li><strong>Models</strong> are objects, i.e. also Ruby classes (like User). Only models talk to the database and they deal with validating, associating and transacting data. They give the data they get from the database back to the controller.</li><br>
+				<li><strong>Views</strong> are what the user sees. Views are templates that get converted to HTML and then sent back to the browser. The process of converting the data received from the model into a view is called <em>"rendering a view"</em>. The order to render comes from the controller. View is only doing what the controller tells it to do and only reading what the controller gives it.</li>
+			  </ul>
+		    </div>
+
+			<p>The <span class="highlight">controller</span> is the <em>chief</em> of all actions taken which are...</p>
+			<ul>
+				<li>...parsing user requests</li>
+				<li>...invoking the model</li>
+				<li>...rendering the view</li>
+				<li>...returning the full web page to the browser in HTML</li>
+			</ul>
+
+			<p>There is far more to discuss about Rails and MVC, if you are interested in continuing reading, check out <a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with Rails</a> at RailsGuides or read this post <a href="http://www.sitepoint.com/getting-started-with-mvc/">Getting Started with MVC</a>.
+
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.nav {
+	width: 100%;
+	background-color: darkgoldenrod;
+	padding: 10px 10px 10px 0px;
+	border: 1px solid black;
+}
+
+.nav ul {
+	position: relative;  /*relative to main nav bar*/
+	display: inline-block; /*adjust the width of menu to fit*/
+	width: 95%;
+	font-weight: bolder;
+	margin: 0px;
+}
+
+.nav ul li {
+	float: left;
+	position: relative; /*relative to ul*/
+	padding: 10px;
+	border: 10px;
+	width: 30%;
+	list-style: none;
+}
+
+.nav ul li:hover {
+	color: #ffffff;
+}
+
+.nav ul li ul {
+	position: absolute;
+	top: 30px;
+	left: 0px;
+}
+
+.nav ul ul {
+	display: none;  /*hide sub-menu*/
+}
+
+.nav ul li a{
+	padding: 5px 10px 5px 10px;
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+
+.nav ul li a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.nav ul li:hover > ul {  /*menu to appear on hover ul li; > ensures only child ul of li is targeted*/
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav ul li:hover > ul li {
+	float: none;
+	display: block;
+}
+
+.nav ul li:hover > ul li a{
+	min-width: 150px
+	color: #ffffff;
+}
+
+.nav ul li:hover > ul li a:hover {
+	color: #ffffff;
+}
+
+.drop li a {
+	border: solid black 1px;
+	font-size: 10px;
+}
+
+
+

@@ -54,6 +54,12 @@ body {
 	color: black;
 }
 
+.content img {
+	display: block;
+	width: 50%;
+    margin: auto;
+    border: solid black 1px;
+}
 
 .highlight {
 	color: darkgoldenrod;
@@ -70,7 +76,7 @@ body {
 
 .content a {
 	font-weight: bolder;
-	text-decoration: none;
+	text-decoration: underline;
 	color: black;
 }
 

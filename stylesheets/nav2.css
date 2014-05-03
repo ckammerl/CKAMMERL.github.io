@@ -1,0 +1,95 @@
+
+	
+.nav {
+	width: 100%;
+	background-color: darkgoldenrod;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+
+.nav-button {
+	width: 30%;
+	font-weight: bolder;
+	display: inline;
+	padding: 15px;
+}
+
+.nav-button a:hover {
+	color: #ffffff;
+}
+
+
+
+.nav-button ul {
+	width: 100%;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	display: inline-flex;
+	font-size: bolder;
+}
+
+.nav-button ul li {
+ 	list-style: none;
+	width:10%;
+	padding: 10px;
+	margin: 0;
+	display: inline-flex;
+}
+
+.nav-button ul li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    border: 1px solid black;
+    margin-left:1px;
+}
+
+.nav-button ul li a:hover { 
+    font-size: bolder;
+}
+
+
+
+
+.nav-button li ul {
+    display: none;
+}
+
+
+.nav-button li:hover ul {
+    display: block; 
+} 
+
+
+.nav-button li ul li {
+    display: block;
+}
+
+
+
+
+
+
+	<div class="nav">
+
+		<a href="CKAMMERL.github.io/index.html" class="button" data-dropdown="drop">HOME</a>
+		<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>
+  			<li><a href="CKAMMERL.github.io/munich.html">Munich</a></li>
+		</ul>
+
+		<a href="#" class="button" data-dropdown="drop">TECHNICAL BLOG</a>
+		<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>
+  			<li><a href="CKAMMERL.github.io/03_15_14.html">Website Design</a></li>
+  			<li><a href="CKAMMERL.github.io/03_20_14.html">About Javascript</a></li>
+  			<li><a href="CKAMMERL.github.io/week3_technical.html">Array vs. Hashes</a></li>
+		</ul>
+
+		<a href="#" class="button" data-dropdown="drop">CULTURAL BLOG</a>
+		<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>
+  			<li><a href="CKAMMERL.github.io/03_21_14.html">Values</a></li>
+  			<li><a href="CKAMMERL.github.io/week3_cultural_blog.html">Pairing and Feedback</a></li>
+		</ul>
+	</div>
