@@ -11,7 +11,7 @@
 
 	<div class="nav">
 		<div class="nav-button"><a href="index.html">/Home</a></div>
-		<div class="nav-button"><a href="week7_technical_blog.html">/Technical Blog</a></div>
+		<div class="nav-button"><a href="week9_technical_blog.html">/Technical Blog</a></div>
 	</div>
 
 	<header id="page_title">TECHNICAL BLOG</header>
@@ -19,63 +19,60 @@
 	<div id="main">
 		<div class="content">
 			<h1>04/12/14 - Introduction to Ruby class</h1>
-			<p>In most cases, a <strong>class</strong> consists mainly of a collection of method definitions. The purpose of a class is to create objects which are called instances of a class. Let's build a class Person:</p><br>
+			<p>In most cases, a <strong>class</strong> consists mainly of a collection of method definitions. The purpose of a class is to create objects which are called instances of a class. Let's build a class Person:</p>
 			<span class="highlight">Example</span>:<br><br>
 				<div class="code">
 					<code>
 					class Person<br>
 					end<br><br>
 
-					person = Person.new  #=> creating a new instance of the class Person called person<br>
+					person = Person.new  &nbsp;#=> creating a new instance of the class Person called person<br>
 					</code>
 				</div>
-				<br>
 
-				<p>Within your class, you define what each object, i.e. instance of the class "knows" about itself and what the instance can do. In order to let the instance "person" know its state, you have to create it with a couple of attributes. The right terminology for this is to "initialize" the new instance of the class. Let's have a look how our class Person could do it:</p><br>
+				<p>Within your class, you define what each object, i.e. instance of the class "knows" about itself and what the instance can do. In order to let the instance "person" know its state, you have to create it with a couple of attributes. The right terminology for this is to "initialize" the new instance of the class. Let's have a look how our class Person could do it:</p>
 				<span class="highlight">Example</span>:<br><br>
 				<div class="code">
 					<code>
-					class Person<br>
-					  def initialize(name)<br>
-					  @name = name<br>
-					  @age = age<br>
-					  end<br>
+					class Person<br><br>
+					  &nbsp;def initialize(name)<br>
+					  &nbsp;&nbsp;@name = name<br>
+					  &nbsp;&nbsp;@age = age<br>
+					  &nbsp;end<br><br>
 					end<br><br>
 
-					person = Person.new("Peter")  #=> creating a new instance of the class Person called person and assigning him the value (name) "Peter"<br>
+					person = Person.new("Peter")  &nbsp;#=> creating a new instance of the class Person called person and assigning him the value (name) "Peter"<br>
 					</code>
 				</div>
-				<br>
 
-				<p> Wow, hold on a sec, what's this @-sign about? It means that EVERY new instance of the class Person "knows" this things, therefore each new instance will be able to have these attributes. @name and @age are special variables, called instance variables. You have to write them into your initialize method because you want every instance to know them, but their individual value is defined in a separate instance method. Have a look at the example:</p><br>
+				<p> Wow, hold on a sec, what's this @-sign about? It means that EVERY new instance of the class Person "knows" this things, therefore each new instance will be able to have these attributes. @name and @age are special variables, called instance variables. You have to write them into your initialize method because you want every instance to know them, but their individual value is defined in a separate instance method. Have a look at the example:</p>
 				<span class="highlight">Example</span>:<br><br>
 				<div class="code">
 					<code>
-					class Person<br>
-           			 def initialize(name)<br>
-            		  @name = name<br>
-            		  @age = age <br>
-            		 end <br><br>
+					class Person<br><br>
+           			  &nbsp;def initialize(name)<br>
+            		  &nbsp;&nbsp;@name = name<br>
+            		  &nbsp;&nbsp;@age = age <br>
+            		  &nbsp;end <br><br>
 
-            		 def name  => instance method #name<br>
-              		  return @name<br>
-             		 end<br><br>
+            		  &nbsp;def name &nbsp;#=> instance method #name<br>
+              		  &nbsp;&nbsp;return @name<br>
+             		  &nbsp;end<br><br>
 
 
-            		 def age    => instance method #age<br>
-              		  fixed_age = '12'<br>
-              		  return fixed_age<br>
-            		 end<br>
+            		  &nbsp;def age &nbsp;#=> instance method #age<br>
+              		  &nbsp;&nbsp;fixed_age = '12'<br>
+              		  &nbsp;&nbsp;return fixed_age<br>
+            		  &nbsp;end<br><br>
           			end<br><br>
 
 
-					person = Person.new("Peter") => sets the string "Peter" equal to @name<br>
-					puts person.name 		=> calling the method #name; puts "Peter" <br><br>
-					puts person.age 		=> instance method #age takes no argmument; puts always 12 as defined by #age<br>
+					person = Person.new("Peter") &nbsp;=> sets the string "Peter" equal to @name<br>
+					puts person.name &nbsp;=> calling the method #name; puts "Peter" <br><br>
+					puts person.age &nbsp;=> instance method #age takes no argmument; puts always 12 as defined by #age<br>
 
 					</code>
 				</div>
-				<br>
 
 					<p>Let me explain what we've just done: we created a new instance of the class Person (person). Everytime a new instance is created by using the method new (Person.new), the method initialize  is automatically called. We wrote the method initialize the way it should take one argument (name). This means when calling the method new, we must pass in one argument. And we did that by saying:</p>
 					<div class="code">
@@ -83,37 +80,37 @@
 						person = Person.new("Peter")<br>
 					</code>
 				</div>
-					<br>
+				
 					<p><span class="highlight">More about #name:</span></p>
 					<p> Then we called the method #name on person - <strong>person.name</strong> - and said we want the output printed on the screen. The method #name returns @name. And @name equals what we give in as argument when initializing a new instance of the class with the method new. Why? Because that is what we defined in our method initialize:<br><em>set @name equal to name</em> - or to be more precise, <em>set @name equal to the output of the instance method #name</em>.</p>
 					<p>This means that whatever output we get from #name, i.e. whatever the method returns, this value will be set equal to @name. In our example we called <em>person.name("Peter")</em> which sets @name equal to the string "Peter". The assignment of @name = "Peter" is now stored and saved for the instance 'person'. This means that whenever we call the method #name on the instance person, we will get "Peter" back.</p>
 
 					<p><span class="highlight">More about #age:</span></p>
 					<p>The instance method #age does the same thing, it defines what value @age should have. However, within #age, we define a certain age, i.e. fixed_age and the method returns fixed_age. Again, whatever the method returns, this value will be set equal @age as defined in the method initialize. It is important to see that we wrote our class Person the way that every new instance will be initialized with the same age.</p>
-					<p>As a result, when calling <strong>person.age</strong> we will always get the number 12 back because the method #age returns fixed_age which it set equal to 12. So we don't define the value of @age when initializing a new instance and therefore not from <em>OUTSIDE</em> the class. #age returns a certain value, i.e. fixed_age which is equal to the integer 12. At the moment, the method #age is the only part in our code where the value of @age can be defined. An example will make it clear:</p><br>
+					<p>As a result, when calling <strong>person.age</strong> we will always get the number 12 back because the method #age returns fixed_age which it set equal to 12. So we don't define the value of @age when initializing a new instance and therefore not from <em>OUTSIDE</em> the class. #age returns a certain value, i.e. fixed_age which is equal to the integer 12. At the moment, the method #age is the only part in our code where the value of @age can be defined. An example will make it clear:</p>
 					<span class="highlight">Example</span>:<br><br>
 					<div class="code">
 					<code>
-					class Person<br>
-           			 def initialize(name)<br>
-            		  @name = name<br>
-            		  @age = age <br>
-            		 end<br><br> 
+					class Person<br><br>
+           			 &nbsp;def initialize(name)<br>
+            		 &nbsp;&nbsp;@name = name<br>
+            		 &nbsp;&nbsp;@age = age <br>
+            		 &nbsp;end<br><br> 
 
-            		 def name<br>
-              		  return @name<br>
-             		 end<br><br> 
+            		 &nbsp;def name<br>
+              		 &nbsp;&nbsp;return @name<br>
+             		 &nbsp; end<br><br> 
 
-            		 def age<br>
-              		  fixed_age = '12'<br>
-              		  return fixed_age<br>
-            		 end<br>
+            		 &nbsp;def age<br>
+              		 &nbsp;&nbsp;fixed_age = '12'<br>
+              		 &nbsp;&nbsp;return fixed_age<br>
+            		 &nbsp;end<br><br>
           			end<br><br>
 
-			         person = Person.new("Peter") => initializing person as new instance of Person<br>
+			         person = Person.new("Peter") &nbsp;=> initializing person as new instance of Person<br>
 			         person.name<br>
 			         person.age<br><br>   
-			         person_2 = Person.new("Julius") => initializing person_2 as new instance of Person<br>
+			         person_2 = Person.new("Julius") &nbsp;=> initializing person_2 as new instance of Person<br>
 			         person_2.name<br>
 			         person_2.age<br><br>
 
@@ -121,44 +118,43 @@
 					 => My friend Peter is 12 years old. My friend Julius, like every other friend who is an instance of Person, is 12 years old.<br>
 				    </code>
 				</div>
-				<br>
+				
 					<p><span class="highlight">More about instance variables:</span></p>
 				    <p>One more thing about instance variables: You should know that they are <strong>available across methods for any instance</strong>. What does this mean? It tells you that after you've written your method initialize with certain instance variables, like @name or @age, you can use this instance variables in <em>ALL</em> your instance methods defined in your class.</p> 
-				    <p>In contrast to local variables (name = "Peter") which are ONLY available within the method that defined this variable, instance variables (@name = name or as we defined it for person: @name = "Peter"), can be accessed and used in any of the classes instance methods. Here is how we could do it:</p><br>
+				    <p>In contrast to local variables (name = "Peter") which are ONLY available within the method that defined this variable, instance variables (@name = name or as we defined it for person: @name = "Peter"), can be accessed and used in any of the classes instance methods. Here is how we could do it:</p>
 
 				    <span class="highlight">Example</span>:<br><br>
 					<div class="code">
 					<code>
-					class Person<br>
-           			 def initialize(name)<br>
-            		  @name = name<br>
-            		  @age = age<br> 
+					class Person<br><br>
+           			  &nbsp;def initialize(name)<br>
+            		  &nbsp;&nbsp;@name = name<br>
+            		  &nbsp;&nbsp;@age = age<br> 
             		 end<br><br> 
 
-            		 def name<br>
-              		  return @name<br>
-             		 end<br><br> 
+            		  &nbsp;def name<br>
+              		  &nbsp;&nbsp;return @name<br>
+             		  &nbsp;end<br><br> 
 
-            		 def age<br>
-              		  fixed_age = '12'<br>
-              		  return fixed_age<br>
-          			end<br><br> 
+            		  &nbsp;def age<br>
+              		  &nbsp;&nbsp;fixed_age = '12'<br>
+              		  &nbsp;&nbsp;return fixed_age<br>
+          			  &nbsp;end<br><br> 
 
-          			def full_name<br>
-          			  full_name = @name + " Miller"  => instance variables are accessible accross all instance methods of the class<br>
-          			  return full_name<br>  
-          			end<br>
+          			  &nbsp;def full_name<br>
+          			  &nbsp;&nbsp;full_name = @name + " Miller"  &nbsp;=> instance var accessible accross all instance methods of the class<br>
+          			  &nbsp;&nbsp;return full_name<br>  
+          			  &nbsp;end<br><br>
           			end<br><br> 
 
 					person = Person.new("Peter")<br>
-          			person.full_name => "Peter Miller"<br><br>
+          			person.full_name &nbsp;=> "Peter Miller"<br><br>
 
           			person_2 = Person.new("Julius")<br>
-          			person_2.full_name => "Julius Miller"<br>
+          			person_2.full_name &nbsp;=> "Julius Miller"<br>
           			 </code>
           		</div>
-          		<br>
-
+          		
 					<p>This is only a brief introduction to Ruby classes, but I hoped it helped you understand the concept. Try it yourself and build a class Dogs, or Cars or Fruits - whatever
 						you like - to get the hang of it. You'll learn most by writing classes yourself! Have fun :)</p>
 		</div>
