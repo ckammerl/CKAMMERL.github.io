@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cheatsheet</title>
+	<link type="text/css" href="stylesheets/unit3_cheatsheet.css" rel="stylesheet"/>
+	<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">/Home</a></div>
+	</div>
+
+	<header id="page_title"><CENTER>CHEATSHEET</CENTER></header>
+	
+	<div class="content">
+	    <h1>05/10/14 - JavaScript Objects</h1>
+		<h2>1. Objects and properties</h2>
+		<p>An object in JavaScript is any unordered collection of <strong>key-value pairs</strong>. A property of an object is a variable attached to the object which describes the characteristics of the object. A <strong>property name</strong> can be any valid JavaScript <strong>string</strong> or anything that can be converted to a string.</p>
+
+		<p>You can access object properties with dot-notation if the property is a valid <a href="http://coderkeen.com/old/articles/identifiers-en.html">identifier</a> or <strong>bracket notation</strong>. Use bracket notation when property names are to be dynamically determined.</p>
+		<p>Use bracket notation with <strong>for..in</strong> loops to iterate over <strong> enumerable</strong> properties. You'll find an <span class="highlight">example</span> implementation at <a href="https://github.com/ckammerl/phase_0_unit_3/blob/master/week_8_and_9/3_JavaScript/tally_votes/my_solution.js">GitHub</a>.</p>
+		<div class="code">
+		  <code>
+		  	var myCar = new Object();<br>
+		  	myCar.make = "BMW";<br>
+		  	myCar["make"] = "BMW";<br><br>
+		  	//or using a string value stored in a variable:<br>
+		  	var propertyName = "make";<br>
+		  	myCar[propertyName] = "BMW";<br>
+		  </code>	
+		</div><br>
+
+
+		<h2>2. Enumerating all properties of an object</h2>
+		<p>Here are three ways to list/traverse object properties:</p>
+		<div class="code">
+			<ul>
+		  	  <li><strong>for...in loops</strong><br>
+		  	  This method traverses all enumerable properties of an object and its prototype chain</li><br>
+		      <li><strong>Object.keys(obj)</strong><br>
+		  	  This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object obj</li><br>
+		  	  <li><strong>Object.getOwnPropertyNames(obj)</strong><br>
+		  	  This method returns an array containing all own properties' names (enumerable or not) of an object</li>
+		  	<ul>
+		</div><br>
+  			
+  		<h2>3. Create new objects</h2>
+  		<h3><span class="highlight">3.1 Use object initializer (literal notation)</span></h3>
+  		<p>The var obj is the new object; its properties can be an identifier (property_1), a number, or a string:</p>
+  		  <div class="code">
+  			<code>
+  			var obj = { property_1:&nbsp;value_1,<br>
+  			&nbsp;2:&nbsp;value_2,<br>
+  			&nbsp;"property n":&nbsp;value_n };
+  		    </code>
+  		  </div>
+
+
+		<p>You can also use <strong>literal notation</strong> to <strong>create arrays</strong>:</p>
+		<div class="code">
+		  <code>
+	 	  var coffees = ["French Roast", "Colombian", "Kona"];&nbsp;//array with 3 elements and lenght of 3<br>
+		  var fish = ["Lion", , "Angel"];&nbsp;//array with 3 elements; fish[1] is undefined<br>
+		  </code>
+  		 </div><br>
+
+  		<h3><span class="highlight">3.2 Use constructor function</span></h3>
+  		<p>You can also create an object using:</p>
+  		<ul>
+  		  <li><strong>Constructur function</strong></li>
+  		</ul>
+  		 <div class="code">
+  		  <code>
+  			function Car(make, year) {<br>
+  			&nbsp;this.make = make;&nbsp;//using <em>this</em> to assign values to the object's properties<br>
+  			&nbsp;this.year = year;<br>
+  			};
+  		  </code>
+  		 </div>
+		<ul>
+  		  <li>Using <strong>new</strong></li>
+  		</ul>
+  		  <div class="code">
+  			<code>
+  			var myCar = new Car("BMW", 1993);&nbsp;//instantiate a new Car object (calling the function Car(make, year))
+  			</code>
+  		  </div><br>
+  	
+	
+  		<h3><span class="highlight">3.3 Use Object.create method</span></h3>
+  		<p>The <strong>Object.create()</strong> method creates a new object with a specified prototype object and properties.</p>
+
+  		<div class="code">
+  			<code>
+  			var person = Object.create(null);&nbsp; // the parameter 'null' is the object's prototype (undefined in this example)<br>
+  		    </code>
+  		  </div><br>
+
+		<h2>4. Object.create() and Prototypes</h2>
+		<p>JavaScript objects are pairs of keys and values. But they also have an additional attribute: <strong>a pointer to another object</strong> which is called <strong>prototype</strong>. Prototypes can be used to <span class="highlight">inherit functionality</span>. We can create a new object with a set of properties, but with a PARTICULAR prototype. You can look up an object's prototype using the method <strong>Object.getPrototypeOf(obj)</strong>:</p>
+		<div class="code">
+  		  <code>
+  		  	var woman = Object.create(null);<br>
+  		  	woman["sex"] = "female";&nbsp; // setting new property sex eql to "female"<br><br>
+
+  		  	var anna = Object.create(woman);<br>
+  		  	anna["firstName'] = "Anna";&nbsp; // setting new property firstName eql to "Anna"<br>
+  		  	anna["lastName"] = "Morris";<br><br>
+
+  		  	anna.firstName&nbsp; // "Anna"<br>
+  		  	anna.sex&nbsp; // "female"<br><br>
+
+  		  	Object.getPrototypeOf(anna)&nbsp; // returns the woman object, i.e. { sex: 'female' }<br><br><br>
+
+  		  	var hanna = Object.create(woman);<br>
+  		  	hanna["firstName"] = "Hanna";&nbsp; // setting new property firstName eql to "Anna"<br>
+  		  	hanna["lastName"] = "Edward";<br><br>
+
+  		  	hanna.firstName&nbsp; // "Hanna"<br>
+  		  	hanna.sex&nbsp; // "female"<br><br>
+
+  		  	Object.getPrototypeOf(hanna)&nbsp; // returns the woman object, i.e. { sex: 'female' }<br><br>
+
+  		  </code>
+  		</div>
+
+
+		<p>In the example above, we created two new objects (anna and hanna) which have individual properties (firstName, lastName) but they share the <span class="highlight">SAME prototype</span> (woman) as both objects are created with this prototype:</p>
+		<div class="code">
+  		  <code>
+  		  	var woman = Object.create(null);<br>
+  		  	woman.sex = "female";&nbsp; // setting new property sex eql to "female"<br><br>
+
+  		  	var anna = Object.create(woman);<br>
+  		  	Object.getPrototypeOf(anna)&nbsp; // returns the woman object, i.e. { sex: 'female' }<br><br>
+
+  		  	var hanna = Object.create(woman);<br>
+  		  	Object.getPrototypeOf(hanna)&nbsp; // returns the woman object, i.e. { sex: 'female' }<br>
+  		  </code>
+  		</div><br>
+
+		<h2>5. Additional resources</h2>
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">MDN: Working with objects</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values%2C_variables%2C_and_literals#Array_literals">MDN: Array literals</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create">MDN: Object.create()</a></li>
+			<li><a href="http://www.htmlgoodies.com/beyond/javascript/object.create-the-new-way-to-create-objects-in-javascript.html">HTML Goodies: Object.create()</a></li>
+			<li><a href="http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/">Understanding 'Prototypes' in JavaScript</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype">MDN: Object.prototype</a></li>
+
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+</body>
+</html>
