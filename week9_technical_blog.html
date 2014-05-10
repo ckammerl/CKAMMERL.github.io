@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recursion</title>
+	<link type="text/css" href="stylesheets/blog_template.css" rel="stylesheet"/>
+	<link type="text/css" href="stylesheets/nav.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav-button"><a href="index.html">/Home</a></div>
+		<div class="nav-button"><a href="03_20_14.html">JavaScript Blog</a></div>
+		<div class="nav-button"><a href="week3_technical.html">Array vs. Hashes Blog</a></div>
+		<div class="nav-button"><a href="week4_technical_blog.html">Ruby Enumerable#map Blog</a></div>
+		<div class="nav-button"><a href="week5_technical_blog.html">Ruby class Blog</a></div>
+		<div class="nav-button"><a href="week6_technical_blog.html">OOP vs. FP Blog</a></div>
+		<div class="nav-button"><a href="week7_technical_blog.html">SQL Injection BLOG</a></div>
+		<div class="nav-button"><a href="week8_technical_blog.html">Rails BLOG</a></div>
+		<div class="nav-button"><a href="week9_technical_blog.html">Recursion BLOG</a></div>
+	</div>
+
+	<header id="page_title">TECHNICAL BLOG</header>
+	
+	<div id="main">
+		<div class="content">
+			<h1>05/09/14 - Recursion</h1>
+			<h2>A brief introduction</h2>
+			<p><strong>Recursion</strong> is the idea of a method calling itself. It is used to solve bigger problems by breaking them down into smaller problems. The solutions of the smaller problems are fed back to the bigger problem until the solution of the bigger (original) problem is achieved. This idea is known as "Divide and Conquere" which an article at <a href="http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm">Wikipedia</a> describes as follows:</p> 
+		<div class="code">
+			
+				(..) divide and conquer is an important algorithm design paradigm based on multi-branched recursion. A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same (or related) type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. 
+			
+		</div><br>
+
+		<h2>How does it work?</h2>
+		<p>Recursion is an elegant and effective way to solve problems by repeatedly calling a method until the targeted solution is achieved. However, it takes time to understand this algorithm and there are several other iterators we can use to achieve the same result. <strong>Looping</strong> with <strong>for, while or #each</strong> is not better nor worse than going the "recursion way". It is important though that you understand how recursion works.</p>
+
+		<p>The best way to get a feeling and better understanding of recursion is to look at some examples and then do try it yourself. I'm describing two different scenarios below.</p>
+		
+		<span class="highlight">Example 1</span>:<br><br>
+			<div class="code">
+					<code>
+					#using recursion to append numbers from 0..n to an array<br><br>
+
+					def append(arr, num)<br>
+					&nbsp;return arr if num &lt; 0 &nbsp;#=> base case<br>
+					&nbsp;arr.push(num)<br>
+					&nbsp;append(arr, num - 1) &nbsp;#=> recursive step: method calls itself<br>
+					end<br><br>
+
+					append([], 3) &nbsp;#=> [3,2,1,0]<br>
+					</code>
+				</div>
+
+		<p>As you can see in the example, we broke the problem into smaller problems by looking at each number in the range using recursion, i.e. by calling the method itself again and again, substracting 1 from num in each call and pushing the result into an array. The loop stops and the result, i.e. the modified array, will be returned as soon as our <em>base case</em> is true.</p>
+
+		<p><strong>Base case</strong> is the condition that stops the loop. It is the smallest possible solution and a key point as it stops our method from looping infinitly. Without the definition of the base case, we would get back a <a href="http://www.ruby-doc.org/core-2.1.1/SystemStackError.html">SystemStackError</a> which indicates that no more stack is left to allocate memory from. In other words, endless loops can result in your system crashing down.</p><br> 
+
+		</p>Another good and famous example for using recursion is to define the <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a>. By definition, the first two numbers in the Fibonacci sequence are 1 and 1, or 0 and 1 depending on the chosen starting point of the sequence (the latter in our example below), and each subsequent number is the sum of the previous two.</a>:</p>
+
+		<span class="highlight">Example 2</span>:<br><br>
+			<div class="code">
+					<code>
+					#find a Fibonacci number<br><br>
+					def fib(num)<br>
+					&nbsp;return num if num &lt;= 1 &nbsp;#=> base case<br>
+					&nbsp;fib(n-1) + fib(n+2) &nbsp;#=> recursive step: method calls itself<br>
+					end<br><br>
+
+					fib(10) &nbsp;#=> 55, i.e. the tenth Fibonacci number is 55 <br>
+					</code>
+				</div>
+
+			
+		<p>If you are interested in diving a little bit deeper, check out the video tutorial <a href="http://vimeo.com/24716767">Ruby Kickstart - Introduction to Recursion</a>.
+
+		</div>
+		<footer>
+			<p>Contact me via <a href="mailto:christiane@kammerl.com" target="_blank">Email</a></p>
+		</footer>
+	</div>
+</body>
+</html>
